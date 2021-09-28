@@ -1,16 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Collections.Immutable;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 using HarmonyLib;
 using BepInEx;
 using System.Xml;
 
-using Timberborn.BlockObjectTools;
 using Timberborn.BlockSystem;
-using Timberborn.ToolSystem;
 
 namespace BlockDataUtility
 {
@@ -18,7 +11,7 @@ namespace BlockDataUtility
     [HarmonyPatch]
     public class Patcher : BaseUnityPlugin
     {
-        private static List<string> seen = new List<string>();
+        private static HashSet<string> seen = new HashSet<string>();
         private static XmlWriter xmlWriter = XmlWriter.Create("block_output.xml");
         private static IEnumerable<UnityEngine.Vector3Int> GetAllCoordinates(UnityEngine.Vector3Int size)
         {
