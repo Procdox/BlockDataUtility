@@ -14,7 +14,7 @@ using Timberborn.ToolSystem;
 
 namespace BlockDataUtility
 {
-    [BepInPlugin("org.bepinex.plugins.exampleplugin", "BlockDataUtility", "1.0.0.0")]
+    [BepInPlugin("BlockDataUtility/Procdox/com.github", "BlockDataUtility", "1.0.0.0")]
     [HarmonyPatch]
     public class Patcher : BaseUnityPlugin
     {
@@ -99,7 +99,7 @@ namespace BlockDataUtility
         {
             xmlWriter.WriteStartDocument();
             xmlWriter.WriteStartElement("BlockObjects");
-            var harmony = new Harmony("com.example.patch");
+            var harmony = new Harmony("BlockDataUtility/Procdox/com.github");
             harmony.PatchAll();
         }
         void OnApplicationQuit()
